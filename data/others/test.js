@@ -1,1 +1,1 @@
-function Test{alert("Test");}
+function Test() {alert("Test");}
