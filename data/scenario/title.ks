@@ -4,7 +4,6 @@
 @clearstack
 @bg storage ="title.jpg"
 ;@wait time = 200
-@bgmopt volume = 40
 
 *start 
 

@@ -5,6 +5,7 @@
 [cm  ]
 [clearfix]
 [start_keyconfig]
+[bgmopt volume = 40]
 
 [macro name="speech"]
 [iscript]
