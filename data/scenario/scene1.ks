@@ -6,7 +6,12 @@
 [clearfix]
 [start_keyconfig]
 [bgmopt volume=40]
-[macro name="speech"][iscript]Test();[endscript][endmacro]
+
+[macro name="speech"]
+[iscript]
+Test();
+[endscript]
+[endmacro]
 
 [bg storage="livingroom_1.jpg" time="100"]
 [playbgm storage="music.ogg"]
