@@ -5,10 +5,11 @@
 [cm  ]
 [clearfix]
 [start_keyconfig]
+[bgmopt volume=40]
+[macro name="speech"][iscript]Test();[endscript][endmacro]
 
-
-[bg storage="room.jpg" time="100"]
-
+[bg storage="livingroom_1.jpg" time="100"]
+[playbgm storage="music.ogg"]
 ;メニューボタンの表示
 @showmenubutton
 
@@ -16,7 +17,7 @@
 [position layer="message0" left=160 top=500 width=1000 height=200 page=fore visible=true]
 
 ;文字が表示される領域を調整
-[position layer=message0 page=fore margint="45" marginl="50" marginr="70" marginb="60"]
+[position layer=message0 page=fore margint="30" marginl="50" marginr="70" marginb="60"]
 
 
 ;メッセージウィンドウの表示
@@ -30,7 +31,7 @@
 
 ;このゲームで登場するキャラクターを宣言
 ;akane
-[chara_new  name="akane" storage="chara/akane/normal.png" jname="あかね"  ]
+[chara_new  name="akane" storage="chara/akane/normal.png" jname="あかね"]
 ;キャラクターの表情登録
 [chara_face name="akane" face="angry" storage="chara/akane/angry.png"]
 [chara_face name="akane" face="doki" storage="chara/akane/doki.png"]
@@ -41,14 +42,20 @@
 ;yamato
 [chara_new  name="yamato"  storage="chara/yamato/normal.png" jname="やまと" ]
 
-#
+;John
+[chara_new name="John" storage="chara/John/normal.png"]
+[chara_face name="John" face="happy" storage="chara/John/happy.png"]
+[chara_face name="John" face="sad" storage="chara/John/sad.png"]
+
+#You
 さて、ゲームが簡単に作れるというから、来てみたものの[p]
 
 誰もいねぇじゃねぇか。[p]
 ……[p]
 帰るか。。。[p]
+[speech]
 
-[font  size="30"   ]
+[font  size="30"]
 #?
 ちょっとまったーーーーー[p]
 [resetfont  ]
@@ -67,7 +74,7 @@
 [glink  color="blue"  storage="scene1.ks"  size="28"  x="360"  width="500"  y="150"  text="はい。興味あります"  target="*selectinterest"  ]
 [glink  color="blue"  storage="scene1.ks"  size="28"  x="360"  width="500"  y="250"  text="興味あります！"  target="*selectinterest"  ]
 [glink  color="blue"  storage="scene1.ks"  size="28"  x="360"  width="500"  y="350"  text="どちらかと言うと興味あり"  target="*selectinterest"  ]
-[s  ]
+[s]
 *selectinterest
 
 [chara_mod  name="akane" face="happy"  ]
