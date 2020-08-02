@@ -14,7 +14,6 @@ Test();
 [endmacro]
 
 [bg storage="livingroom_1.jpg" time="100"]
-[playbgm storage="music.ogg"]
 ;メニューボタンの表示
 @showmenubutton
 
@@ -54,6 +53,7 @@ Test();
 
 #You
 さて、ゲームが簡単に作れるというから、来てみたものの[p]
+[playbgm storage="music.ogg"]
 
 誰もいねぇじゃねぇか。[p]
 ……[p]
