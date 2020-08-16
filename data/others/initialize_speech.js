@@ -37,7 +37,7 @@ function findDiff(str1, str2) {
   return diff;
 }
 
-function alertwindow() {alert("Test");}
+function alertWindow() {alert("Test");}
 
 function testSpeech() {
 	var phrase = phrases[randomPhrase()];

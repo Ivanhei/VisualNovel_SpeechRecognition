@@ -9,7 +9,7 @@
 
 [macro name="speech"]
 [iscript]
-Test();
+alertWindow();
 [endscript]
 [endmacro]
 
