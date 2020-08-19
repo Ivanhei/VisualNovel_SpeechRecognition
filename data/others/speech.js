@@ -138,5 +138,10 @@ function speech_Beverage() {
 
 		console.log('Confidence: ' + event.results[0][0].confidence);
 		console.log('Speech Received:' + speechResult);
+		console.log('flag_apple = ' + flag_apple);
+		console.log('flag_mango = ' + flag_mango);
+		console.log('flag_pineapple = ' + flag_pineapple);
+		console.log('flag_coffee = ' + flag_coffee);
+		console.log('flag_smoothies = ' + flag_smoothies);
 	}
 }
