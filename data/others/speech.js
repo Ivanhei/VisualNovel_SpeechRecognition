@@ -85,10 +85,10 @@ function speech_Appetizer() {
 		} else if (flag_taco == 1) {
 			appetizer = "ancho chile shrimp tacos";
 			flag_appetizer++;
-		} else {
+		} else if (flag_calamari == 1) {
 			appetizer = "fried calamari";
 			flag_appetizer++;
-		}
+		} else {flag_appetizer = 0;}
 		console.log('Confidence: ' + event.results[0][0].confidence);
 		console.log('Speech Received:' + speechResult);
 		flag = 1;
@@ -129,10 +129,10 @@ function speech_Main() {
 		} else if (flag_salmon == 1) {
 			main = "pistachio crusted salmon";
 			flag_main++;
-		} else {
+		} else if (flag_lobster == 1) {
 			main = "lobster mac and cheese";
 			flag_main++;
-		}
+		} else {flag_main = 0;}
 		console.log('Confidence: ' + event.results[0][0].confidence);
 		console.log('Speech Received:' + speechResult);
 		flag = 2;
@@ -170,7 +170,9 @@ function speech_Beverage() {
 		} else if (flag_coffee == 1) {
 			beverage = "coffee";
 			flag_beverage++;
-		} else { beverage = "smoothies"; flag_beverage++; }
+		} else if (flag_smoothies == 1) {
+			beverage = "smoothies"; flag_beverage++;
+		} else {flag_beverage = 0;}
 
 		console.log('Confidence: ' + event.results[0][0].confidence);
 		console.log('Speech Received:' + speechResult);
