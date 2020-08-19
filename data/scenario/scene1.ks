@@ -152,7 +152,9 @@ May I take your order?[p]
 *Anchor
 #You
 Okay.[p]
-[glink color="blue" size="28" x="360" width="500" y="300" text="Try_to_read_the_name_of_one_appetizer" target=*Speech_Beverage]
+#Waiter
+What do you want for appetizer?
+[glink color="blue" size="28" x="360" width="500" y="300" text="Try_to_name_one_appetizer" target=*Speech_Appetizer]
 [s]
 
 *Repeat
@@ -179,12 +181,49 @@ You're welcome.[p]
 #You
 That's not correct.[l][r]
 Let me try again[p]
-[jump target=*Anchor]
+[glink color="blue" size="28" x="360" width="500" y="100" text="Start_from_appetizer" target=*Speech_Appetizer]
+[glink color="blue" size="28" x="360" width="500" y="200" text="Start_from_main_dish" target=*Speech_Main]
+[glink color="blue" size="28" x="360" width="500" y="300" text="Start_from_beverage" target=*Speech_Beverage]
+[s]
+
+*End
+[chara_show  name="J" left=575 top=75 time=400]
+#John
+Beautiful! Now you know how to order food.[p]
+[s]
 
 ;Speech ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
-;*Speech_Appetizer
-;*Speech_Main
+*Speech_Appetizer
 
+[iscript]
+speech_Appetizer();
+[endscript]
+[wait time=5000]
+[jump target=*Appetizer cond="flag_appetizer"]
+[jump target=*Confused]
+
+*Appetizer
+#Waiter
+Okay, one [emb exp=appetizer].[p]
+How about for main dish?[p]
+[glink color="blue" size="28" x="360" width="500" y="300" text="Try_name_one_main_dish" target=*Speech_Main]
+[s]
+
+*Speech_Main
+
+[iscript]
+speech_Main();
+[endscript]
+[wait time=5000]
+[jump target=*Main cond="flag_main"]
+[jump target=*Confused]
+
+*Main
+#Waiter
+Okay, one [emb exp=main].[p]
+How about for beverage?[p]
+[glink color="blue" size="28" x="360" width="500" y="300" text="Try_to_name_one_beverage" target=*Speech_Beverage]
+[s]
 
 *Speech_Beverage
 
@@ -204,8 +243,10 @@ Okay, one [emb exp=beverage].[p]
 
 #Waiter
 May I beg your pardon please?[p]
+[jump target=*Speech_Appetizer cond="flag = 1"]
+[jump target=*Speech_Main cond="flag = 2"]
+[jump target=*Speech_Beverage cond="flag = 3"]
 [jump target=*Anchor]
-
 ;Speech ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 
 [s]

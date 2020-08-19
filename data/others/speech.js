@@ -52,55 +52,95 @@ recognition_beverage.lang = 'en-US';
 recognition_beverage.interimResults = false;
 recognition_beverage.maxAlternatives = 1;
 
-var appetizer, main, beverage, flag_beverage = 0;
+var appetizer, main, beverage, flag_appetizer, flag_main, flag_beverage, flag = 0;;
 
 function Test() {
 	alert("Test");
 }
 
-'honey-glazed onion rings',
-  'smoked chicken quesadilla',
-  'ancho chile shrimp tacos',
-  'fried calamari'
-
 function speech_Appetizer() {
 	recognition_appetizer.start();
 	recognition_appetizer.onresult = function(event) {
 		var speechResult = event.results[0][0].transcript.toLowerCase();
+		flag_appetizer = 0;
 		var flag_onion = -1;
-		var flag_mango = -1;
-		var flag_pineapple = -1;
-		var flag_coffee = 0;
-		var flag_smoothies = 0;
+		var flag_quesadilla = -1;
+		var flag_taco = -1;
+		var flag_calamari = 0;
 		speechResult.split(' ').forEach(function(val, i) {
-			if (val == "juice") { flag_apple++; flag_mango++; flag_pineapple++; }
-			if (val == "apple") flag_apple++;
-			if (val == "mango") flag_mango++;
-			if (val == "pineapple") flag_pineapple++;
-			if (val == "iced" || val == "coffee") flag_coffee++;
-			if (val == "smoothies") flag_smoothies++;
+			if (val == "honey-glazed" || val == "onion" || val == "rings" || val == "ring" && flag_onion != 1) flag_onion++;
+			if (val == "smoked" || val == "chicken" && flag_quesadilla != 1) flag_quesadilla++;
+			if (val == "ancho" || val == "chile" || val == "shrimp" && flag_taco != 1) flag_taco++;
+			if (val == "quesadilla") flag_quesadilla = 1;
+			if (val == "taco" || val == "tacos") flag_taco = 1;
+			if (val == "calamari") flag_calamari = 1;
 		});
+
+		if (flag_onion) {
+			appetizer = "honey-glazed onion rings";
+			flag_appetizer++;
+		} else if (flag_quesadilla) {
+			appetizer = "smoked chicken quesadilla";
+			flag_appetizer++;
+		} else if (flag_taco) {
+			appetizer = "ancho chile shrimp tacos";
+			flag_appetizer++;
+		} else {
+			appetizer = "fried calamari";
+			flag_appetizer++;
+		}
 		console.log('Confidence: ' + event.results[0][0].confidence);
+		console.log('Speech Received:' + speechResult);
+		flag = 1;
 	}
 }
+
+'microbrew battered halibut',
+  'braised boneless short ribs',
+  'roast pork tenderloin',
+  'pistachio crusted salmon',
+  'lobster mac and cheese'
+
 function speech_Main() {
 	recognition_main.start();
 	recognition_main.onresult = function(event) {
 		var speechResult = event.results[0][0].transcript.toLowerCase();
-		var flag_apple = -1;
-		var flag_mango = -1;
-		var flag_pineapple = -1;
-		var flag_coffee = 0;
-		var flag_smoothies = 0;
+		flag_main = 0;
+		var flag_halibut = -1;
+		var flag_ribs = -2;
+		var flag_tenderloin = -1;
+		var flag_salmon = -1;
+		var flag_lobster = -2;
 		speechResult.split(' ').forEach(function(val, i) {
-			if (val == "juice") { flag_apple++; flag_mango++; flag_pineapple++; }
-			if (val == "apple") flag_apple++;
-			if (val == "mango") flag_mango++;
-			if (val == "pineapple") flag_pineapple++;
-			if (val == "iced" || val == "coffee") flag_coffee++;
-			if (val == "smoothies") flag_smoothies++;
+			if (val == "microbrew" || val == "battered" && flag_halibut != 1) flag_halibut++;
+			if (val == "braised" || val == "boneless" || val == "short" && flag_ribs != 1) flag_ribs++;
+			if (val == "roast" || val == "pork" && flag_tenderloin != 1) flag_tenderloin++;
+			if (val == "pistachio" || val == "crusted" && flag_salmon != 1) flag_salmon++;
+			if (val == "lobster" || val == "mac" || val == "and" || val == "cheese" && flag_lobster != 1) flag_lobster++;
+			if (val == "halibut") flag_halibut = 1;
+			if (val == "ribs") flag_ribs = 1;
+			if (val == "salmon") flag_salmon = 1;
 		});
+
+		if (flag_halibut) {
+			main = "microbrew battered halibut";
+			flag_main++;
+		} else if (flag_ribs) {
+			main = "braised boneless short ribs";
+			flag_main++;
+		} else if (flag_tenderloin) {
+			main = "roast pork tenderloin";
+			flag_main++;
+		} else if (flag_salmon) {
+			main = "pistachio crusted salmon";
+			flag_main++;
+		} else {
+			main = "lobster mac and cheese";
+			flag_main++;
+		}
 		console.log('Confidence: ' + event.results[0][0].confidence);
+		console.log('Speech Received:' + speechResult);
+		flag = 2;
 	}
 }
 
@@ -108,6 +148,7 @@ function speech_Beverage() {
 	recognition_beverage.start();
 	recognition_beverage.onresult = function(event) {
 		var speechResult = event.results[0][0].transcript.toLowerCase();
+		flag_beverage = 0;
 		var flag_apple = -1;
 		var flag_mango = -1;
 		var flag_pineapple = -1;
@@ -119,7 +160,7 @@ function speech_Beverage() {
 			if (val == "mango") flag_mango++;
 			if (val == "pineapple") flag_pineapple++;
 			if (val == "iced" || val == "coffee" && flag_coffee != 1) flag_coffee++;
-			if (val == "smoothies") flag_smoothies++;
+			if (val == "smoothies" || val == "smoothie") flag_smoothies++;
 		});
 
 		if (flag_apple == 1) {
@@ -138,11 +179,6 @@ function speech_Beverage() {
 
 		console.log('Confidence: ' + event.results[0][0].confidence);
 		console.log('Speech Received:' + speechResult);
-		console.log('flag_apple = ' + flag_apple);
-		console.log('flag_mango = ' + flag_mango);
-		console.log('flag_pineapple = ' + flag_pineapple);
-		console.log('flag_coffee = ' + flag_coffee);
-		console.log('flag_smoothies = ' + flag_smoothies);
-		console.log('beverage:' + beverage);
+		flag = 3;
 	}
 }
