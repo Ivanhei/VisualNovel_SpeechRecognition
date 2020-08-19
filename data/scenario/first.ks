@@ -1,6 +1,5 @@
 @layopt layer=message0 visible=false
 [loadjs storage="speech.js"]
-;[loadjs storage="initialize_speech.js"]
 
 ;@jump storage="title.ks"
 
