@@ -191,6 +191,7 @@ Let me try again[p]
 [iscript]
 speech_Beverage();
 [endscript]
+[s]
 [jump target=*Beverage cond="flag_beverage"]
 [jump target=*Confused]
 
