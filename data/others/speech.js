@@ -143,5 +143,6 @@ function speech_Beverage() {
 		console.log('flag_pineapple = ' + flag_pineapple);
 		console.log('flag_coffee = ' + flag_coffee);
 		console.log('flag_smoothies = ' + flag_smoothies);
+		console.log('beverage:' + beverage);
 	}
 }
