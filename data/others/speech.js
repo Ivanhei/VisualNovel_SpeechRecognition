@@ -122,16 +122,16 @@ function speech_Beverage() {
 			if (val == "smoothies") flag_smoothies++;
 		});
 
-		if (flag_apple) {
+		if (flag_apple == 1) {
 			beverage = "apple juice";
 			flag_beverage++;
-		} else if (flag_mango) {
+		} else if (flag_mango == 1) {
 			beverage = "mango juice";
 			flag_beverage++;
-		} else if (flag_pineapple) {
+		} else if (flag_pineapple == 1) {
 			beverage = "pineapple juice";
 			flag_beverage++;
-		} else if (flag_coffee) {
+		} else if (flag_coffee == 1) {
 			beverage = "coffee";
 			flag_beverage++;
 		} else { beverage = "smoothies"; flag_beverage++; }
