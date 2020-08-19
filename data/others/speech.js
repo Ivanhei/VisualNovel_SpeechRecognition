@@ -137,5 +137,6 @@ function speech_Beverage() {
 		} else { beverage = "smoothies"; flag_beverage++; }
 
 		console.log('Confidence: ' + event.results[0][0].confidence);
+		console.log('Speech Received:' + speechResult);
 	}
 }

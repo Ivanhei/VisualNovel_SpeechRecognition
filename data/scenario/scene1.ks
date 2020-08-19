@@ -159,7 +159,7 @@ Okay.[p]
 
 #Waiter
 Let me repeat your order.[p]
-You ordered [emb exp=beverage].[l][r]
+You ordered one [emb exp=beverage].[l][r]
 Is that correct?[p]
 
 [glink  color="blue"  storage="scene1.ks"  size="28"  x="360"  width="500"  y="150"  text="Yes."  target=*Correct]
@@ -196,6 +196,7 @@ speech_Beverage();
 [jump target=*Confused]
 
 *Beverage
+#Waiter
 Okay, one [emb exp=beverage].[p]
 [jump target=*Repeat]
 
