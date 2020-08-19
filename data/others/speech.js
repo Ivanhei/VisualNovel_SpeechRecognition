@@ -52,7 +52,7 @@ recognition_beverage.lang = 'en-US';
 recognition_beverage.interimResults = false;
 recognition_beverage.maxAlternatives = 1;
 
-var appetizer, main, beverage, flag_appetizer, flag_main, flag_beverage, flag = 0;;
+var appetizer, main, beverage, flag_appetizer, flag_main, flag_beverage, flag = 0;
 
 function Test() {
 	alert("Test");
@@ -124,7 +124,7 @@ function speech_Main() {
 			main = "braised boneless short ribs";
 			flag_main++;
 		} else if (flag_tenderloin == 1) {
-			main = "roast pork tenderloin";
+			main = "grilled pork tenderloin";
 			flag_main++;
 		} else if (flag_salmon == 1) {
 			main = "pistachio crusted salmon";

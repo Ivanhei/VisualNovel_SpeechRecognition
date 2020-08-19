@@ -245,9 +245,9 @@ Okay, one [emb exp=beverage].[p]
 
 #Waiter
 May I beg your pardon please?[p]
-[jump target=*Speech_Appetizer cond="flag = 1"]
-[jump target=*Speech_Main cond="flag = 2"]
-[jump target=*Speech_Beverage cond="flag = 3"]
+[jump target=*Speech_Appetizer cond="flag == 1"]
+[jump target=*Speech_Main cond="flag == 2"]
+[jump target=*Speech_Beverage cond="flag == 3"]
 [jump target=*Anchor]
 ;Speech ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 
