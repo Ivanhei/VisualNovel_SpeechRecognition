@@ -73,7 +73,7 @@ function speech_Appetizer() {
 		var flag_coffee = 0;
 		var flag_smoothies = 0;
 		speechResult.split(' ').forEach(function(val, i) {
-			if (val == "juice") { flag_apple++; flag_mango++; flag_pineapp++; }
+			if (val == "juice") { flag_apple++; flag_mango++; flag_pineapple++; }
 			if (val == "apple") flag_apple++;
 			if (val == "mango") flag_mango++;
 			if (val == "pineapple") flag_pineapple++;
@@ -93,7 +93,7 @@ function speech_Main() {
 		var flag_coffee = 0;
 		var flag_smoothies = 0;
 		speechResult.split(' ').forEach(function(val, i) {
-			if (val == "juice") { flag_apple++; flag_mango++; flag_pineapp++; }
+			if (val == "juice") { flag_apple++; flag_mango++; flag_pineapple++; }
 			if (val == "apple") flag_apple++;
 			if (val == "mango") flag_mango++;
 			if (val == "pineapple") flag_pineapple++;
@@ -114,7 +114,7 @@ function speech_Beverage() {
 		var flag_coffee = 0;
 		var flag_smoothies = 0;
 		speechResult.split(' ').forEach(function(val, i) {
-			if (val == "juice") { flag_apple++; flag_mango++; flag_pineapp++; }
+			if (val == "juice") { flag_apple++; flag_mango++; flag_pineapple++; }
 			if (val == "apple") flag_apple++;
 			if (val == "mango") flag_mango++;
 			if (val == "pineapple") flag_pineapple++;
