@@ -11,7 +11,7 @@ var phrases_appetizer = [
 var phrases_main = [
   'microbrew battered halibut',
   'braised boneless short ribs',
-  'roast pork tenderloin',
+  'grilled pork tenderloin',
   'pistachio crusted salmon',
   'lobster mac and cheese'
 ];
@@ -95,12 +95,6 @@ function speech_Appetizer() {
 	}
 }
 
-'microbrew battered halibut',
-  'braised boneless short ribs',
-  'roast pork tenderloin',
-  'pistachio crusted salmon',
-  'lobster mac and cheese'
-
 function speech_Main() {
 	recognition_main.start();
 	recognition_main.onresult = function(event) {
@@ -114,11 +108,12 @@ function speech_Main() {
 		speechResult.split(' ').forEach(function(val, i) {
 			if (val == "microbrew" || val == "battered" && flag_halibut != 1) flag_halibut++;
 			if (val == "braised" || val == "boneless" || val == "short" && flag_ribs != 1) flag_ribs++;
-			if (val == "roast" || val == "pork" && flag_tenderloin != 1) flag_tenderloin++;
+			if (val == "grilled" || val == "pork" && flag_tenderloin != 1) flag_tenderloin++;
 			if (val == "pistachio" || val == "crusted" && flag_salmon != 1) flag_salmon++;
 			if (val == "lobster" || val == "mac" || val == "and" || val == "cheese" && flag_lobster != 1) flag_lobster++;
 			if (val == "halibut") flag_halibut = 1;
 			if (val == "ribs") flag_ribs = 1;
+			if (val == "tenderloin") flag_tenderloin = 1;
 			if (val == "salmon") flag_salmon = 1;
 		});
 
