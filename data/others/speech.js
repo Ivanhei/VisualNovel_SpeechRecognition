@@ -76,13 +76,13 @@ function speech_Appetizer() {
 			if (val == "calamari") flag_calamari = 1;
 		});
 
-		if (flag_onion) {
+		if (flag_onion == 1) {
 			appetizer = "honey-glazed onion rings";
 			flag_appetizer++;
-		} else if (flag_quesadilla) {
+		} else if (flag_quesadilla == 1) {
 			appetizer = "smoked chicken quesadilla";
 			flag_appetizer++;
-		} else if (flag_taco) {
+		} else if (flag_taco == 1) {
 			appetizer = "ancho chile shrimp tacos";
 			flag_appetizer++;
 		} else {
@@ -117,16 +117,16 @@ function speech_Main() {
 			if (val == "salmon") flag_salmon = 1;
 		});
 
-		if (flag_halibut) {
+		if (flag_halibut == 1) {
 			main = "microbrew battered halibut";
 			flag_main++;
-		} else if (flag_ribs) {
+		} else if (flag_ribs == 1) {
 			main = "braised boneless short ribs";
 			flag_main++;
-		} else if (flag_tenderloin) {
+		} else if (flag_tenderloin == 1) {
 			main = "roast pork tenderloin";
 			flag_main++;
-		} else if (flag_salmon) {
+		} else if (flag_salmon == 1) {
 			main = "pistachio crusted salmon";
 			flag_main++;
 		} else {
