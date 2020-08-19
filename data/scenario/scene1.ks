@@ -161,7 +161,9 @@ What do you want for appetizer?
 
 #Waiter
 Let me repeat your order.[p]
-You ordered one [emb exp=beverage].[l][r]
+You ordered one [emb exp=appetizer][l][r]
+one [emb exp=main][l][r]
+and one [emb exp=beverage].[p]
 Is that correct?[p]
 
 [glink  color="blue"  storage="scene1.ks"  size="28"  x="360"  width="500"  y="150"  text="Yes."  target=*Correct]
