@@ -118,7 +118,7 @@ function speech_Beverage() {
 			if (val == "apple") flag_apple++;
 			if (val == "mango") flag_mango++;
 			if (val == "pineapple") flag_pineapple++;
-			if (val == "iced" || val == "coffee") flag_coffee++;
+			if (val == "iced" || val == "coffee" && flag_coffee != 1) flag_coffee++;
 			if (val == "smoothies") flag_smoothies++;
 		});
 
